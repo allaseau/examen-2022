@@ -3,8 +3,8 @@
 if (isset($transaction['emetteur'])){
     $emetteur = get_contact_by_id(strtoupper($transaction['emetteur']));
 }
-if (isset($transaction['destiantaire'])){
-    $emetteur = get_contact_by_id(strtoupper($transaction['emetteur']));
+if (isset($transaction['destinataire'])){
+    $destinataire = get_contact_by_id(strtoupper($transaction['destinataire']));
 }
 
 ?>
@@ -17,13 +17,18 @@ if (isset($transaction['destiantaire'])){
     <title>liste transactions</title>
 </head>
 <body>
-    <?php foreach ($contacts as $c): ?>
         <li>
-            <?= ($c['nom']) ?>
-            <?= ($c['prenom']) ?>
-            <?= ($c['compte']) ?>
+            <?php 
+            foreach($transactions as $transaction){
+                if($transaction['montant'] < 0){                
+                    echo $destinataire ['nom'];
+                    echo $destinataire ['prenom'];
+                }else{
+                    echo $emetteur ['nom'];
+                    echo $emetteur ['prenom'];
+                }
+            }
+            ?>
         </li>
-    <?php endforeach;?>
-
 </body>
 </html>

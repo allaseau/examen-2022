@@ -22,7 +22,8 @@
             </label>
         </div>
         <div>
-            <input type="date" value="date('Y.m.d')" placeholder="date('Y.m.d')"> 
+        <?="Today is " . date("Y/m/d") . "<br>";?>
+            <input type="date"> 
         </div>
         
     </form>
