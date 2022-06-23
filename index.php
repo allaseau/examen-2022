@@ -1,5 +1,5 @@
 <?php
 
-require ('./liste_stagiaires.php');
+require ('./liste_transactions.php');
 
 require('./view.php');

@@ -1,6 +1,3 @@
-<?php
-getContactById($id) 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +10,12 @@ getContactById($id)
     <ul>
     <?php foreach ($transactions as $t) :?>
         <li>
-            <?= $t['date']?>
-            <?= 
-            if ($t['montant'] < 0 ) {
-                    echo strtoupper($t['destinataire'])
-                }else{
-                    echo strtoupper($t['emetteur'])
-                }
-            ?>
+            <a href="./liste/index.php">
+                <?= $t['date']?>
             </a>
         </li>
     <?php endforeach ?>
     </ul>
+        <button><a href="./transaction/index.php"> Effectuer une transaction</a></button>
 </body>
 </html>
